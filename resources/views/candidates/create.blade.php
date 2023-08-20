@@ -206,7 +206,7 @@
 <script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <script src="../../dist/js/adminlte.min.js"></script>
-<script src="../../dist/js/demo.js"></script>
+
 
 </body>
 </html>

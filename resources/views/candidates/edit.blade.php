@@ -163,7 +163,7 @@
                                     <option value="< 1 years" @if ($candidate->year_exp == "< 1 years") selected @endif>< 1 years</option>
                                     <option value="2 - 3 years" @if ($candidate->year_exp == "2 - 3 years") selected @endif>2 - 3 years</option>
                                     <option value="4 - 5 years" @if ($candidate->year_exp == "4 - 5 years") selected @endif>4 - 5 years</option>
-                                    <option value="> 5 years" @if ($candidate->year_exp == "> 5 years") selected @endif> 5 years</option>
+                                    <option value="> 5 years" @if ($candidate->year_exp == "> 5 years") selected @endif>> 5 years</option>
                                 </select>
                                 @error('year_exp')
                                         <span class="invalid-feedback" role="alert">
@@ -207,7 +207,7 @@
 <script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <script src="../../dist/js/adminlte.min.js"></script>
-<script src="../../dist/js/demo.js"></script>
+
 
 </body>
 </html>
