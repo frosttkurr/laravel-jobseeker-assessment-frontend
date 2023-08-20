@@ -128,7 +128,7 @@
                                   <select class="form-control @error('gender') is-invalid @enderror" id="gender" name="gender" disabled="disabled">
                                     <option value="-">Choose Gender</option>
                                     <option value="M" @if ($candidate->gender == "M") selected @endif>Male</option>
-                                    <option value="F" @if ($candidate->gender == "L") selected @endif>Female</option>
+                                    <option value="F" @if ($candidate->gender == "F") selected @endif>Female</option>
                                   </select>
                                   @error('gender')
                                         <span class="invalid-feedback" role="alert">
