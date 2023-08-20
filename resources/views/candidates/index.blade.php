@@ -101,6 +101,7 @@
                                 <td>@if ($result->gender == 'M') Male @elseif ($result->gender == 'F') Female @endif</td>
                                 <td>{{ $result->year_exp }}</td>
                                 <td>
+                                    <a class="btn btn-secondary" href="{{ route('candidates.show',$result->candidate_id) }}">Show</a>
                                     <a class="btn btn-primary" href="{{ route('candidates.edit',$result->candidate_id) }}">Edit</a>
                                     <a href="{{ route('candidates.destroy', $result->candidate_id) }}" onclick="notificationBeforeDelete(event, this)">
                                         <button type="button" class="btn btn-danger waves-effect waves-light">Delete</button>

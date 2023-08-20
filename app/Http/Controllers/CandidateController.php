@@ -87,7 +87,16 @@ class CandidateController extends Controller
      */
     public function show($id)
     {
-        //
+        $client = new Client();
+        $url = $this->base_url . "api/candidates/" . $id;
+
+        $response = $client->request('GET', $url, [
+            'verify'  => false,
+        ]);
+
+        $responseBody = json_decode($response->getBody());
+        $candidate = $responseBody->result;
+        return view('candidates.show', compact('candidate'));
     }
 
     /**
