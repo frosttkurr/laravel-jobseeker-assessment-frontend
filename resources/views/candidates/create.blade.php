@@ -90,47 +90,96 @@
                           <h3 class="card-title">Candidate Information</h3>
                       </div>
                       <div class="card-body">
-                          <form id="candidateForm" action="" method="POST">
+                        <form id="candidateForm" action="{{ route('candidates.store') }}" method="POST">
+                          @csrf
                               <div class="form-group">
                                   <label for="full_name">Full Name</label>
-                                  <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Please enter first name" required>
+                                  <input type="text" class="form-control @error('full_name') is-invalid @enderror" id="full_name" name="full_name" placeholder="Please enter first name">
+                                
+                                  @error('full_name')
+                                      <span class="invalid-feedback" role="alert">
+                                          <strong>{{ $message }}</strong>
+                                      </span>
+                                  @enderror
                               </div>
                               <div class="form-group">
                                   <label for="email">Email</label>
-                                  <input type="email" class="form-control" id="email" name="email" placeholder="Please enter email" required>
+                                  <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Please enter email">
+                              
+                                  @error('email')
+                                      <span class="invalid-feedback" role="alert">
+                                          <strong>{{ $message }}</strong>
+                                      </span>
+                                  @enderror
                               </div>
                               <div class="form-group">
-                                <label for="phone_number">Phone Number</label>
-                                <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Please enter phone number">
-                            </div>
-                            <div class="form-group">
-                                <label for="dob">Date of Birth</label>
-                                <input type="date" class="form-control" id="dob" name="dob" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="pob">Place of Birth</label>
-                                <input type="text" class="form-control" id="pob" name="pob" placeholder="Please enter place of birth" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="gender">Gender</label>
-                                <select class="form-control" id="gender" name="gender" required>
+                                  <label for="phone_number">Phone Number</label>
+                                  <input type="text" class="form-control @error('phone_number') is-invalid @enderror" id="phone_number" name="phone_number" placeholder="Please enter phone number">
+                                
+                                  @error('phone_number')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                  @enderror
+                              </div>
+                              <div class="form-group">
+                                  <label for="dob">Date of Birth</label>
+                                  <input type="date" class="form-control @error('dob') is-invalid @enderror" id="dob" name="dob">
+                              
+                                  @error('dob')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                  @enderror
+                                </div>
+                              <div class="form-group">
+                                  <label for="pob">Place of Birth</label>
+                                  <input type="text" class="form-control @error('pob') is-invalid @enderror" id="pob" name="pob" placeholder="Please enter place of birth" >
+                              
+                                  @error('pob')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                  @enderror
+                                </div>
+                              <div class="form-group">
+                                  <label for="gender">Gender</label>
+                                  <select class="form-control @error('gender') is-invalid @enderror" id="gender" name="gender">
+                                    <option value="-">Choose Gender</option>
                                     <option value="M">Male</option>
                                     <option value="F">Female</option>
+                                  </select>
+                                  @error('gender')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                  @enderror
+                              </div>
+                              <div class="form-group">
+                                <label for="year_exp">Year Experiences</label>
+                                <select class="form-control @error('year_exp') is-invalid @enderror" id="year_exp" name="year_exp">
+                                    <option value="-">Choose Year Experiences</option>
+                                    <option value="< 1 years">< 1 years</option>
+                                    <option value="2 - 3 years">2 - 3 years</option>
+                                    <option value="4 - 5 years">4 - 5 years</option>
+                                    <option value="> 5 years">> 5 years</option>
                                 </select>
-                            </div>
-                            <div class="form-group">
-                              <label for="gender">Year Experiences</label>
-                              <select class="form-control" id="year_exp" name="year_exp" required>
-                                <option value="< 1 years">< 1 years</option>
-                                <option value="2 - 3 years">2 - 3 years</option>
-                                <option value="4 - 5 years">4 - 5 years</option>
-                                <option value="> 5 years">> 5 years</option>
-                            </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="last_salary">Last Salary</label>
-                                <input type="text" class="form-control" id="last_salary" name="last_salary" placeholder="Please enter last salary">
-                            </div>
+                                @error('year_exp')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                  @enderror
+                              </div>
+                              <div class="form-group">
+                                  <label for="last_salary">Last Salary</label>
+                                  <input type="text" class="form-control @error('last_salary') is-invalid @enderror" id="last_salary" name="last_salary" placeholder="Please enter last salary">
+                              
+                                  @error('last_salary')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                  @enderror
+                                </div>
                               <button type="submit" class="btn btn-primary">Submit</button>
                           </form>
                       </div>

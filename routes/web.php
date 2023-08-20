@@ -14,7 +14,7 @@ use App\Http\Controllers\CandidateController;
 |
 */
 
-Route::prefix('candidates')->group(function() {
+Route::group(['prefix' => 'candidates', 'as' => 'candidates.'], function () {
     Route::get('/', [CandidateController::class,'index'])->name('index');
     Route::delete('/destroy/{id}', [CandidateController::class,'destroy'])->name('destroy');
     Route::get('/show/{id}', [CandidateController::class,'show'])->name('show');

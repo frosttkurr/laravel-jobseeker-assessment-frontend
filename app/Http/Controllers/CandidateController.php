@@ -43,7 +43,28 @@ class CandidateController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'full_name' => 'required',
+            'email' => 'required|email', // Validating email format
+            'dob' => 'required|date',    // Validating date format
+            'pob' => 'required',
+            'gender' => 'required|in:M,F|not_in:-',
+            'year_exp' => 'required|not_in:-', 
+        ]);
+        
+        $url = 'http://localhost:3004/api/candidates';
+        $client = new Client();
+    
+        try {
+            $response = $client->post($url, [
+                'json' => $request->all(),
+            ]);
+    
+            $responseData = json_decode($response->getBody(), true);
+            return response()->json($responseData, $response->getStatusCode());
+        } catch (ClientException $e) {
+            return response()->json(['error' => 'An error occurred'], 500);
+        }
     }
 
     /**
