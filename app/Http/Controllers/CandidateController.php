@@ -14,8 +14,8 @@ class CandidateController extends Controller
      */
     public function index()
     {
-        $client = new Client(); //GuzzleHttp\Client
-        $url = "http://localhost:3004/api/candidates/";
+        $client = new Client();
+        $url = "http://localhost:3004/api/candidates";
 
         $response = $client->request('GET', $url, [
             'verify'  => false,
@@ -32,7 +32,7 @@ class CandidateController extends Controller
      */
     public function create()
     {
-        //
+        return view('candidates.create');
     }
 
     /**
