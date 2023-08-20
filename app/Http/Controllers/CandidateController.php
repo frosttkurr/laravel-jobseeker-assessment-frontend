@@ -61,7 +61,11 @@ class CandidateController extends Controller
             ]);
     
             $responseData = json_decode($response->getBody(), true);
-            return response()->json($responseData, $response->getStatusCode());
+            if ($responseData["meta"]["status"] == 200) {
+                return redirect()->route('candidates.index');
+            } else {
+                return redirect()->back();
+            }
         } catch (ClientException $e) {
             return response()->json(['error' => 'An error occurred'], 500);
         }
