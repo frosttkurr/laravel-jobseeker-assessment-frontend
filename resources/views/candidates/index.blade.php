@@ -120,7 +120,7 @@
                                 <td>
                                     <a class="btn btn-primary" href="{{ route('candidates.edit',$result->candidate_id) }}">Edit</a>
                                     <a href="{{ route('candidates.destroy', $result->candidate_id) }}" onclick="notificationBeforeDelete(event, this)">
-                                        <button type="button" class="mt-1 btn btn-danger waves-effect waves-light">Hapus</button>
+                                        <button type="button" class="btn btn-danger waves-effect waves-light">Delete</button>
                                     </a>
                                 </td>
                             </tr>  

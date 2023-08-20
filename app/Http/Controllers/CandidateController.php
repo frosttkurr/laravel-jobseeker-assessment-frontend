@@ -7,6 +7,13 @@ use GuzzleHttp\Client;
 
 class CandidateController extends Controller
 {
+    private $base_url;
+
+    public function __construct()
+    {
+        $this->base_url = "http://localhost:3004/";
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +22,7 @@ class CandidateController extends Controller
     public function index()
     {
         $client = new Client();
-        $url = "http://localhost:3004/api/candidates";
+        $url = $this->base_url . "api/candidates";
 
         $response = $client->request('GET', $url, [
             'verify'  => false,
@@ -52,7 +59,7 @@ class CandidateController extends Controller
             'year_exp' => 'required|not_in:-', 
         ]);
         
-        $url = 'http://localhost:3004/api/candidates';
+        $url = $this->base_url . 'api/candidates';
         $client = new Client();
     
         try {
@@ -91,7 +98,7 @@ class CandidateController extends Controller
     public function edit($id)
     {
         $client = new Client();
-        $url = "http://localhost:3004/api/candidates/" . $id;
+        $url = $this->base_url . "api/candidates/" . $id;
 
         $response = $client->request('GET', $url, [
             'verify'  => false,
@@ -120,7 +127,7 @@ class CandidateController extends Controller
             'year_exp' => 'required|not_in:-', 
         ]);
         
-        $url = 'http://localhost:3004/api/candidates/' . $id;
+        $url = $this->base_url . 'api/candidates/' . $id;
         $client = new Client();
     
         try {
@@ -147,7 +154,7 @@ class CandidateController extends Controller
      */
     public function destroy($id)
     {
-        $url = 'http://localhost:3004/api/candidates/' . $id;
+        $url = $this->base_url . 'api/candidates/' . $id;
         $client = new Client();
     
         try {
