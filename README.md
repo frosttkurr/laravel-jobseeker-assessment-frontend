@@ -13,6 +13,7 @@ Example:
    ![image](https://github.com/frosttkurr/laravel-jobseeker-assessment-frontend/assets/62165059/727a4442-04e2-4d85-ad3e-bc8cd80a16b6)
 
 4. Delete existing data
-   ![Uploading image.png…]()
+   ![image](https://github.com/frosttkurr/laravel-jobseeker-assessment-frontend/assets/62165059/da18ebd7-00a2-45fc-aa94-a0443e470282)
+
 
 
