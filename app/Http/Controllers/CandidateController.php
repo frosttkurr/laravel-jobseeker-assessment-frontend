@@ -53,11 +53,13 @@ class CandidateController extends Controller
     {
         $validatedData = $request->validate([
             'full_name' => 'required',
+            'phone_number' => 'numeric',
             'email' => 'required|email',
             'dob' => 'required|date',
             'pob' => 'required',
             'gender' => 'required|in:M,F|not_in:-',
             'year_exp' => 'required|not_in:-', 
+            'last_salary' => 'numeric',
         ]);
         
         $url = $this->base_url . 'api/candidates';
@@ -130,11 +132,13 @@ class CandidateController extends Controller
     {
         $validatedData = $request->validate([
             'full_name' => 'required',
+            'phonee_number' => 'numeric',
             'email' => 'required|email',
             'dob' => 'required|date',
             'pob' => 'required',
             'gender' => 'required|in:M,F|not_in:-',
             'year_exp' => 'required|not_in:-', 
+            'last_salary' => 'numeric',
         ]);
         
         $url = $this->base_url . 'api/candidates/' . $id;

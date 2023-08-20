@@ -98,7 +98,7 @@
                               </div>
                               <div class="form-group">
                                   <label for="phone_number">Phone Number</label>
-                                  <input type="text" class="form-control @error('phone_number') is-invalid @enderror" id="phone_number" name="phone_number" value={{ $candidate->phone_number }} placeholder="Please enter phone number">
+                                  <input type="number" class="form-control @error('phone_number') is-invalid @enderror" id="phone_number" name="phone_number" value={{ $candidate->phone_number }} placeholder="Please enter phone number">
                                 
                                   @error('phone_number')
                                         <span class="invalid-feedback" role="alert">
@@ -156,7 +156,7 @@
                               </div>
                               <div class="form-group">
                                   <label for="last_salary">Last Salary</label>
-                                  <input type="text" class="form-control @error('last_salary') is-invalid @enderror" id="last_salary" name="last_salary" value={{ $candidate->last_salary }} placeholder="Please enter last salary">
+                                  <input type="number" class="form-control @error('last_salary') is-invalid @enderror" id="last_salary" name="last_salary" value={{ $candidate->last_salary }} placeholder="Please enter last salary">
                               
                                   @error('last_salary')
                                         <span class="invalid-feedback" role="alert">
