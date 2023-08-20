@@ -83,11 +83,62 @@
 
     <section class="content">
       <div class="container-fluid">
-        <div class="row">
-      
-        </div>
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="card">
+                      <div class="card-header">
+                          <h3 class="card-title">Candidate Information</h3>
+                      </div>
+                      <div class="card-body">
+                          <form id="candidateForm" action="" method="POST">
+                              <div class="form-group">
+                                  <label for="full_name">Full Name</label>
+                                  <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Please enter first name" required>
+                              </div>
+                              <div class="form-group">
+                                  <label for="email">Email</label>
+                                  <input type="email" class="form-control" id="email" name="email" placeholder="Please enter email" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="phone_number">Phone Number</label>
+                                <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Please enter phone number">
+                            </div>
+                            <div class="form-group">
+                                <label for="dob">Date of Birth</label>
+                                <input type="date" class="form-control" id="dob" name="dob" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pob">Place of Birth</label>
+                                <input type="text" class="form-control" id="pob" name="pob" placeholder="Please enter place of birth" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender</label>
+                                <select class="form-control" id="gender" name="gender" required>
+                                    <option value="M">Male</option>
+                                    <option value="F">Female</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                              <label for="gender">Year Experiences</label>
+                              <select class="form-control" id="year_exp" name="year_exp" required>
+                                <option value="< 1 years">< 1 years</option>
+                                <option value="2 - 3 years">2 - 3 years</option>
+                                <option value="4 - 5 years">4 - 5 years</option>
+                                <option value="> 5 years">> 5 years</option>
+                            </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="last_salary">Last Salary</label>
+                                <input type="text" class="form-control" id="last_salary" name="last_salary" placeholder="Please enter last salary">
+                            </div>
+                              <button type="submit" class="btn btn-primary">Submit</button>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
-    </section>
+  </section>
   </div>
 </div>
 
@@ -108,14 +159,5 @@
 <script src="../../dist/js/adminlte.min.js"></script>
 <script src="../../dist/js/demo.js"></script>
 
-<script>
-  $(function () {+
-    $('#example2').DataTable({
-      "paging": true,
-        pageLength: 5,
-        lengthMenu: [5, 10, 20, 50, 100, 200, 500]
-    });
-  });
-</script>
 </body>
 </html>
