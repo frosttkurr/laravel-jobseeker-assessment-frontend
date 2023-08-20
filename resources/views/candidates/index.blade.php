@@ -85,9 +85,13 @@
                     <tr>
                         <th>No.</th>
                         <th>Full Name</th>
+                        <th>Phone Number</th>
                         <th>Email</th>
+                        <th>Date of Birth</th>
+                        <th>Place of Birth</th>
                         <th>Gender</th>
                         <th>Year Experiences</th>
+                        <th>Last Salary<th>
                         <th></th>
                     </tr>
                   </thead>
@@ -97,9 +101,13 @@
                             <tr>
                                 <td>{{ $key+1 }}</td>
                                 <td>{{ $result->full_name }}</td>
+                                <td>{{ $result->phone_number }}</td>
                                 <td>{{ $result->email }}</td>
+                                <td>{{ $result->dob }}</td>
+                                <td>{{ $result->pob }}</td>
                                 <td>@if ($result->gender == 'M') Male @elseif ($result->gender == 'F') Female @endif</td>
                                 <td>{{ $result->year_exp }}</td>
+                                <td>{{ $result->last_salary }}</td>
                                 <td>
                                     <a class="btn btn-primary" href="{{ route('candidates.edit',$result->candidate_id) }}">Edit</a>
                                     <a href="{{ route('candidates.destroy', $result->candidate_id) }}" onclick="notificationBeforeDelete(event, this)">
