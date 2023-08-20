@@ -105,6 +105,7 @@
                         <th>Email</th>
                         <th>Gender</th>
                         <th>Year Experiences</th>
+                        <th></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -116,6 +117,12 @@
                                 <td>{{ $result->email }}</td>
                                 <td>@if ($result->gender == 'M') Male @elseif ($result->gender == 'F') Female @endif</td>
                                 <td>{{ $result->year_exp }}</td>
+                                <td>
+                                    <a class="btn btn-primary" href="{{ route('candidates.edit',$result->candidate_id) }}">Edit</a>
+                                    {{-- <a href="{{ route('admin.dashboard.roles.destroy', $role->id) }}" onclick="notificationBeforeDelete(event, this)">
+                                        <button type="button" class="mt-1 btn btn-danger waves-effect waves-light">Hapus</button>
+                                    </a> --}}
+                                </td>
                             </tr>  
                         @endforeach
                     @endif

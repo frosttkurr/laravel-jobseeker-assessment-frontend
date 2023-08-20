@@ -21,5 +21,5 @@ Route::group(['prefix' => 'candidates', 'as' => 'candidates.'], function () {
     Route::get('/edit/{id}', [CandidateController::class,'edit'])->name('edit');
     Route::get('/create', [CandidateController::class,'create'])->name('create');
     Route::post('/store', [CandidateController::class,'store'])->name('store');
-    Route::post('/update/{id}', [CandidateController::class,'update'])->name('update');
+    Route::put('/update/{id}', [CandidateController::class,'update'])->name('update');
 });

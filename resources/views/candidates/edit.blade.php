@@ -90,7 +90,8 @@
                           <h3 class="card-title">Candidate Information</h3>
                       </div>
                       <div class="card-body">
-                        <form id="candidateForm" action="{{ route('candidates.store') }}" method="POST">
+                        <form id="candidateForm" action="{{ route('candidates.update', $candidate->candidate_id) }}" method="POST">
+                          @method('PUT')
                           @csrf
                               <div class="form-group">
                                   <label for="full_name">Full Name</label>
