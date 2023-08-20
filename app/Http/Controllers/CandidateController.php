@@ -23,7 +23,7 @@ class CandidateController extends Controller
     public function index()
     {
         $client = new Client();
-        $url = $this->base_url . "api/candidates";
+        $url = $this->base_url . "api/candidates?page=1&pageSize=10";
 
         $response = $client->request('GET', $url, [
             'verify'  => false,

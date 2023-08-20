@@ -107,7 +107,7 @@
                                 <td>{{ $result->pob }}</td>
                                 <td>@if ($result->gender == 'M') Male @elseif ($result->gender == 'F') Female @endif</td>
                                 <td>{{ $result->year_exp }}</td>
-                                <td>{{ $result->last_salary }}</td>
+                                <td>Rp{{ number_format($result->last_salary,0,',','.') }}</td>
                                 <td>
                                     <a class="btn btn-primary" href="{{ route('candidates.edit',$result->candidate_id) }}">Edit</a>
                                     <a href="{{ route('candidates.destroy', $result->candidate_id) }}" onclick="notificationBeforeDelete(event, this)">
