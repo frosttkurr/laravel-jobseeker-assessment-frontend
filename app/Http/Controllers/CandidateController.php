@@ -12,6 +12,7 @@ class CandidateController extends Controller
     public function __construct()
     {
         $this->base_url = "http://localhost:3004/";
+        // change this base url based on your API local/server endpoint
     }
 
     /**

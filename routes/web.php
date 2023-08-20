@@ -14,6 +14,10 @@ use App\Http\Controllers\CandidateController;
 |
 */
 
+Route::get('/', function () {
+    return redirect('candidates');
+});
+
 Route::group(['prefix' => 'candidates', 'as' => 'candidates.'], function () {
     Route::get('/', [CandidateController::class,'index'])->name('index');
     Route::delete('/destroy/{id}', [CandidateController::class,'destroy'])->name('destroy');
