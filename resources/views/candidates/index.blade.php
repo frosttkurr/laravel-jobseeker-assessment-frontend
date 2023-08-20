@@ -119,9 +119,9 @@
                                 <td>{{ $result->year_exp }}</td>
                                 <td>
                                     <a class="btn btn-primary" href="{{ route('candidates.edit',$result->candidate_id) }}">Edit</a>
-                                    {{-- <a href="{{ route('admin.dashboard.roles.destroy', $role->id) }}" onclick="notificationBeforeDelete(event, this)">
+                                    <a href="{{ route('candidates.destroy', $result->candidate_id) }}" onclick="notificationBeforeDelete(event, this)">
                                         <button type="button" class="mt-1 btn btn-danger waves-effect waves-light">Hapus</button>
-                                    </a> --}}
+                                    </a>
                                 </td>
                             </tr>  
                         @endforeach
@@ -152,6 +152,12 @@
 <script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <script src="../../dist/js/adminlte.min.js"></script>
 <script src="../../dist/js/demo.js"></script>
+<script src="{{ asset('js/sweetalert2.js') }}"></script>
+
+<form action="" id="delete-form" method="post">
+    @method('delete')
+    @csrf
+</form>
 
 <script>
   $(function () {+
@@ -161,6 +167,23 @@
         lengthMenu: [5, 10, 20, 50, 100, 200, 500]
     });
   });
+
+  function notificationBeforeDelete(event, el) {
+      event.preventDefault();
+      Swal.fire({
+          title: 'Are you sure?',
+          text: 'Data will be deleted',
+          type: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#d33',
+          confirmButtonText: 'Hapus',                
+      }).then((result) => {
+          if (result.value) {
+              $("#delete-form").attr('action', $(el).attr('href'));
+              $("#delete-form").submit();
+          }
+      })
+  }
 </script>
 </body>
 </html>

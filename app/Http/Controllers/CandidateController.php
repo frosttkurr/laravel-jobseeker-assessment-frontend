@@ -147,6 +147,20 @@ class CandidateController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $url = 'http://localhost:3004/api/candidates/' . $id;
+        $client = new Client();
+    
+        try {
+            $response = $client->delete($url);
+    
+            $responseData = json_decode($response->getBody(), true);
+            if ($responseData["meta"]["status"] == 200) {
+                return redirect()->route('candidates.index');
+            } else {
+                return redirect()->back();
+            }
+        } catch (ClientException $e) {
+            return response()->json(['error' => 'An error occurred'], 500);
+        }
     }
 }
