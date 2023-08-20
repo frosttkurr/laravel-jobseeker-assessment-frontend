@@ -45,8 +45,8 @@ class CandidateController extends Controller
     {
         $validatedData = $request->validate([
             'full_name' => 'required',
-            'email' => 'required|email', // Validating email format
-            'dob' => 'required|date',    // Validating date format
+            'email' => 'required|email',
+            'dob' => 'required|date',
             'pob' => 'required',
             'gender' => 'required|in:M,F|not_in:-',
             'year_exp' => 'required|not_in:-', 
@@ -90,7 +90,16 @@ class CandidateController extends Controller
      */
     public function edit($id)
     {
-        //
+        $client = new Client();
+        $url = "http://localhost:3004/api/candidates/" + $id;
+
+        $response = $client->request('GET', $url, [
+            'verify'  => false,
+        ]);
+
+        $responseBody = json_decode($response->getBody());
+        $candidate = $responseBody["result"];
+        return view('candidates.edit', compact('candidate'));
     }
 
     /**

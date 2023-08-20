@@ -86,9 +86,16 @@
         <div class="row">
           <div class="col-12">
             <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">List of Candidates</h3>
-              </div>
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-10">
+                            <h3 class="card-title">List of Candidates</h3>
+                        </div>
+                        <div class="col-2 text-right">
+                            <a class="btn btn-primary" href="{{ route('candidates.create') }}">Create New</a>
+                        </div>
+                    </div>
+                </div>                
               <div class="card-body">
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
